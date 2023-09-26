@@ -1,0 +1,144 @@
+{
+	"compiler": {
+		"version": "0.8.18+commit.87f61d96"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "reason",
+						"type": "string"
+					}
+				],
+				"name": "LogError",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "senderBalance",
+						"type": "uint256"
+					}
+				],
+				"name": "amountController",
+				"outputs": [],
+				"stateMutability": "pure",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "deposit",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "showBalance",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address payable",
+						"name": "to",
+						"type": "address"
+					}
+				],
+				"name": "transfer",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "withdraw",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/Smart_Wallet_Final/Smart_Wallet.sol": "SmartWallet"
+		},
+		"evmVersion": "paris",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/Smart_Wallet_Final/Balance_And_Amount.sol": {
+			"keccak256": "0x6c61358afa9f2aaa6bbcbf17b8b4133a099b895148e687a9a06ef1c3686b5a5d",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://ee5006cf4f722ad4de69727468aac936542ea8e69bba049049fbf251f3efaa9c",
+				"dweb:/ipfs/QmPRb6B8hrHyyf8BWF3CUaBrgdTNtxzf5E5ZaFcRhzTUjN"
+			]
+		},
+		"contracts/Smart_Wallet_Final/Safe_Math.sol": {
+			"keccak256": "0x48076e1f2d0da4a2dab8e24b6eb2d7a26586b743c13bd64c376b66e250e1c7dc",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://84e700f3df0c9fc72c8276fcb10355a28d361ab35fbb43f4ca979047d2049585",
+				"dweb:/ipfs/QmXUytw1EXJ6sATk5aSWMu83Wb5vyKDJYFH22xxKMpPJdt"
+			]
+		},
+		"contracts/Smart_Wallet_Final/Smart_Wallet.sol": {
+			"keccak256": "0x76cb1a34f3c721f6caabaa93fa8650a470dc5fc544b4c6cb63cb8ffecebf70d8",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://4c831af964e4295df0155f78035a218ee1b802dee1fcc63ccdef6539285df863",
+				"dweb:/ipfs/QmcqwXuiG1rTWEQSVPBLquQpHZEUatsALcQoiVbANYqT3a"
+			]
+		}
+	},
+	"version": 1
+}

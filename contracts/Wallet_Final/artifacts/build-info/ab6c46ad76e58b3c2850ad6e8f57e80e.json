@@ -1,0 +1,725 @@
+{
+	"id": "ab6c46ad76e58b3c2850ad6e8f57e80e",
+	"_format": "hh-sol-build-info-1",
+	"solcVersion": "0.8.18",
+	"solcLongVersion": "0.8.18+commit.87f61d96",
+	"input": {
+		"language": "Solidity",
+		"sources": {
+			"contracts/smart_wallet/Enough_Balance.sol": {
+				"content": "// SPDX-License-Identifier: MIT\r\npragma solidity 0.8.18;\r\n\r\ncontract EnoughBalance {\r\n\r\n    struct Wallet {\r\n        address owner;\r\n        uint balance;\r\n    }\r\n\r\n    mapping (address => Wallet) wallets;\r\n\r\n    modifier enoughBalance(uint amount) {\r\n        require(amount <= wallets[msg.sender].balance, \"You can't spend more than you have\");\r\n        _;\r\n    }\r\n}"
+			}
+		},
+		"settings": {
+			"optimizer": {
+				"enabled": false,
+				"runs": 200
+			},
+			"outputSelection": {
+				"*": {
+					"": [
+						"ast"
+					],
+					"*": [
+						"abi",
+						"metadata",
+						"devdoc",
+						"userdoc",
+						"storageLayout",
+						"evm.legacyAssembly",
+						"evm.bytecode",
+						"evm.deployedBytecode",
+						"evm.methodIdentifiers",
+						"evm.gasEstimates",
+						"evm.assembly"
+					]
+				}
+			}
+		}
+	},
+	"output": {
+		"contracts": {
+			"contracts/smart_wallet/Enough_Balance.sol": {
+				"EnoughBalance": {
+					"abi": [],
+					"devdoc": {
+						"kind": "dev",
+						"methods": {},
+						"version": 1
+					},
+					"evm": {
+						"assembly": "    /* \"contracts/smart_wallet/Enough_Balance.sol\":60:367  contract EnoughBalance {... */\n  mstore(0x40, 0x80)\n  callvalue\n  dup1\n  iszero\n  tag_1\n  jumpi\n  0x00\n  dup1\n  revert\ntag_1:\n  pop\n  dataSize(sub_0)\n  dup1\n  dataOffset(sub_0)\n  0x00\n  codecopy\n  0x00\n  return\nstop\n\nsub_0: assembly {\n        /* \"contracts/smart_wallet/Enough_Balance.sol\":60:367  contract EnoughBalance {... */\n      mstore(0x40, 0x80)\n      0x00\n      dup1\n      revert\n\n    auxdata: 0xa26469706673582212200a6ba3bd4eb6b77cec6790f2d4ffe7435858a3f55a86d37017ff22d1a62c3a8564736f6c63430008120033\n}\n",
+						"bytecode": {
+							"functionDebugData": {},
+							"generatedSources": [],
+							"linkReferences": {},
+							"object": "6080604052348015600f57600080fd5b50603f80601d6000396000f3fe6080604052600080fdfea26469706673582212200a6ba3bd4eb6b77cec6790f2d4ffe7435858a3f55a86d37017ff22d1a62c3a8564736f6c63430008120033",
+							"opcodes": "PUSH1 0x80 PUSH1 0x40 MSTORE CALLVALUE DUP1 ISZERO PUSH1 0xF JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST POP PUSH1 0x3F DUP1 PUSH1 0x1D PUSH1 0x0 CODECOPY PUSH1 0x0 RETURN INVALID PUSH1 0x80 PUSH1 0x40 MSTORE PUSH1 0x0 DUP1 REVERT INVALID LOG2 PUSH5 0x6970667358 0x22 SLT KECCAK256 EXP PUSH12 0xA3BD4EB6B77CEC6790F2D4FF 0xE7 NUMBER PC PC LOG3 CREATE2 GAS DUP7 0xD3 PUSH17 0x17FF22D1A62C3A8564736F6C6343000812 STOP CALLER ",
+							"sourceMap": "60:307:0:-:0;;;;;;;;;;;;;;;;;;;"
+						},
+						"deployedBytecode": {
+							"functionDebugData": {},
+							"generatedSources": [],
+							"immutableReferences": {},
+							"linkReferences": {},
+							"object": "6080604052600080fdfea26469706673582212200a6ba3bd4eb6b77cec6790f2d4ffe7435858a3f55a86d37017ff22d1a62c3a8564736f6c63430008120033",
+							"opcodes": "PUSH1 0x80 PUSH1 0x40 MSTORE PUSH1 0x0 DUP1 REVERT INVALID LOG2 PUSH5 0x6970667358 0x22 SLT KECCAK256 EXP PUSH12 0xA3BD4EB6B77CEC6790F2D4FF 0xE7 NUMBER PC PC LOG3 CREATE2 GAS DUP7 0xD3 PUSH17 0x17FF22D1A62C3A8564736F6C6343000812 STOP CALLER ",
+							"sourceMap": "60:307:0:-:0;;;;;"
+						},
+						"gasEstimates": {
+							"creation": {
+								"codeDepositCost": "12600",
+								"executionCost": "66",
+								"totalCost": "12666"
+							}
+						},
+						"legacyAssembly": {
+							".code": [
+								{
+									"begin": 60,
+									"end": 367,
+									"name": "PUSH",
+									"source": 0,
+									"value": "80"
+								},
+								{
+									"begin": 60,
+									"end": 367,
+									"name": "PUSH",
+									"source": 0,
+									"value": "40"
+								},
+								{
+									"begin": 60,
+									"end": 367,
+									"name": "MSTORE",
+									"source": 0
+								},
+								{
+									"begin": 60,
+									"end": 367,
+									"name": "CALLVALUE",
+									"source": 0
+								},
+								{
+									"begin": 60,
+									"end": 367,
+									"name": "DUP1",
+									"source": 0
+								},
+								{
+									"begin": 60,
+									"end": 367,
+									"name": "ISZERO",
+									"source": 0
+								},
+								{
+									"begin": 60,
+									"end": 367,
+									"name": "PUSH [tag]",
+									"source": 0,
+									"value": "1"
+								},
+								{
+									"begin": 60,
+									"end": 367,
+									"name": "JUMPI",
+									"source": 0
+								},
+								{
+									"begin": 60,
+									"end": 367,
+									"name": "PUSH",
+									"source": 0,
+									"value": "0"
+								},
+								{
+									"begin": 60,
+									"end": 367,
+									"name": "DUP1",
+									"source": 0
+								},
+								{
+									"begin": 60,
+									"end": 367,
+									"name": "REVERT",
+									"source": 0
+								},
+								{
+									"begin": 60,
+									"end": 367,
+									"name": "tag",
+									"source": 0,
+									"value": "1"
+								},
+								{
+									"begin": 60,
+									"end": 367,
+									"name": "JUMPDEST",
+									"source": 0
+								},
+								{
+									"begin": 60,
+									"end": 367,
+									"name": "POP",
+									"source": 0
+								},
+								{
+									"begin": 60,
+									"end": 367,
+									"name": "PUSH #[$]",
+									"source": 0,
+									"value": "0000000000000000000000000000000000000000000000000000000000000000"
+								},
+								{
+									"begin": 60,
+									"end": 367,
+									"name": "DUP1",
+									"source": 0
+								},
+								{
+									"begin": 60,
+									"end": 367,
+									"name": "PUSH [$]",
+									"source": 0,
+									"value": "0000000000000000000000000000000000000000000000000000000000000000"
+								},
+								{
+									"begin": 60,
+									"end": 367,
+									"name": "PUSH",
+									"source": 0,
+									"value": "0"
+								},
+								{
+									"begin": 60,
+									"end": 367,
+									"name": "CODECOPY",
+									"source": 0
+								},
+								{
+									"begin": 60,
+									"end": 367,
+									"name": "PUSH",
+									"source": 0,
+									"value": "0"
+								},
+								{
+									"begin": 60,
+									"end": 367,
+									"name": "RETURN",
+									"source": 0
+								}
+							],
+							".data": {
+								"0": {
+									".auxdata": "a26469706673582212200a6ba3bd4eb6b77cec6790f2d4ffe7435858a3f55a86d37017ff22d1a62c3a8564736f6c63430008120033",
+									".code": [
+										{
+											"begin": 60,
+											"end": 367,
+											"name": "PUSH",
+											"source": 0,
+											"value": "80"
+										},
+										{
+											"begin": 60,
+											"end": 367,
+											"name": "PUSH",
+											"source": 0,
+											"value": "40"
+										},
+										{
+											"begin": 60,
+											"end": 367,
+											"name": "MSTORE",
+											"source": 0
+										},
+										{
+											"begin": 60,
+											"end": 367,
+											"name": "PUSH",
+											"source": 0,
+											"value": "0"
+										},
+										{
+											"begin": 60,
+											"end": 367,
+											"name": "DUP1",
+											"source": 0
+										},
+										{
+											"begin": 60,
+											"end": 367,
+											"name": "REVERT",
+											"source": 0
+										}
+									]
+								}
+							},
+							"sourceList": [
+								"contracts/smart_wallet/Enough_Balance.sol",
+								"#utility.yul"
+							]
+						},
+						"methodIdentifiers": {}
+					},
+					"metadata": "{\"compiler\":{\"version\":\"0.8.18+commit.87f61d96\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/smart_wallet/Enough_Balance.sol\":\"EnoughBalance\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"contracts/smart_wallet/Enough_Balance.sol\":{\"keccak256\":\"0x3086fd256bec5088559aa8180cd9d66bba719f27bc8792f80d998421c103d99f\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://ac0b7f046222520f102c9af76e786106cd2b897a08df97a1cc28c1baa3bd088e\",\"dweb:/ipfs/QmagLcBn1Ym1jFwjL8qwRE67i88Hk4ZbtAR5Zq5C5k6WxX\"]}},\"version\":1}",
+					"storageLayout": {
+						"storage": [
+							{
+								"astId": 11,
+								"contract": "contracts/smart_wallet/Enough_Balance.sol:EnoughBalance",
+								"label": "wallets",
+								"offset": 0,
+								"slot": "0",
+								"type": "t_mapping(t_address,t_struct(Wallet)6_storage)"
+							}
+						],
+						"types": {
+							"t_address": {
+								"encoding": "inplace",
+								"label": "address",
+								"numberOfBytes": "20"
+							},
+							"t_mapping(t_address,t_struct(Wallet)6_storage)": {
+								"encoding": "mapping",
+								"key": "t_address",
+								"label": "mapping(address => struct EnoughBalance.Wallet)",
+								"numberOfBytes": "32",
+								"value": "t_struct(Wallet)6_storage"
+							},
+							"t_struct(Wallet)6_storage": {
+								"encoding": "inplace",
+								"label": "struct EnoughBalance.Wallet",
+								"members": [
+									{
+										"astId": 3,
+										"contract": "contracts/smart_wallet/Enough_Balance.sol:EnoughBalance",
+										"label": "owner",
+										"offset": 0,
+										"slot": "0",
+										"type": "t_address"
+									},
+									{
+										"astId": 5,
+										"contract": "contracts/smart_wallet/Enough_Balance.sol:EnoughBalance",
+										"label": "balance",
+										"offset": 0,
+										"slot": "1",
+										"type": "t_uint256"
+									}
+								],
+								"numberOfBytes": "64"
+							},
+							"t_uint256": {
+								"encoding": "inplace",
+								"label": "uint256",
+								"numberOfBytes": "32"
+							}
+						}
+					},
+					"userdoc": {
+						"kind": "user",
+						"methods": {},
+						"version": 1
+					}
+				}
+			}
+		},
+		"sources": {
+			"contracts/smart_wallet/Enough_Balance.sol": {
+				"ast": {
+					"absolutePath": "contracts/smart_wallet/Enough_Balance.sol",
+					"exportedSymbols": {
+						"EnoughBalance": [
+							29
+						]
+					},
+					"id": 30,
+					"license": "MIT",
+					"nodeType": "SourceUnit",
+					"nodes": [
+						{
+							"id": 1,
+							"literals": [
+								"solidity",
+								"0.8",
+								".18"
+							],
+							"nodeType": "PragmaDirective",
+							"src": "33:23:0"
+						},
+						{
+							"abstract": false,
+							"baseContracts": [],
+							"canonicalName": "EnoughBalance",
+							"contractDependencies": [],
+							"contractKind": "contract",
+							"fullyImplemented": true,
+							"id": 29,
+							"linearizedBaseContracts": [
+								29
+							],
+							"name": "EnoughBalance",
+							"nameLocation": "69:13:0",
+							"nodeType": "ContractDefinition",
+							"nodes": [
+								{
+									"canonicalName": "EnoughBalance.Wallet",
+									"id": 6,
+									"members": [
+										{
+											"constant": false,
+											"id": 3,
+											"mutability": "mutable",
+											"name": "owner",
+											"nameLocation": "125:5:0",
+											"nodeType": "VariableDeclaration",
+											"scope": 6,
+											"src": "117:13:0",
+											"stateVariable": false,
+											"storageLocation": "default",
+											"typeDescriptions": {
+												"typeIdentifier": "t_address",
+												"typeString": "address"
+											},
+											"typeName": {
+												"id": 2,
+												"name": "address",
+												"nodeType": "ElementaryTypeName",
+												"src": "117:7:0",
+												"stateMutability": "nonpayable",
+												"typeDescriptions": {
+													"typeIdentifier": "t_address",
+													"typeString": "address"
+												}
+											},
+											"visibility": "internal"
+										},
+										{
+											"constant": false,
+											"id": 5,
+											"mutability": "mutable",
+											"name": "balance",
+											"nameLocation": "146:7:0",
+											"nodeType": "VariableDeclaration",
+											"scope": 6,
+											"src": "141:12:0",
+											"stateVariable": false,
+											"storageLocation": "default",
+											"typeDescriptions": {
+												"typeIdentifier": "t_uint256",
+												"typeString": "uint256"
+											},
+											"typeName": {
+												"id": 4,
+												"name": "uint",
+												"nodeType": "ElementaryTypeName",
+												"src": "141:4:0",
+												"typeDescriptions": {
+													"typeIdentifier": "t_uint256",
+													"typeString": "uint256"
+												}
+											},
+											"visibility": "internal"
+										}
+									],
+									"name": "Wallet",
+									"nameLocation": "99:6:0",
+									"nodeType": "StructDefinition",
+									"scope": 29,
+									"src": "92:69:0",
+									"visibility": "public"
+								},
+								{
+									"constant": false,
+									"id": 11,
+									"mutability": "mutable",
+									"name": "wallets",
+									"nameLocation": "197:7:0",
+									"nodeType": "VariableDeclaration",
+									"scope": 29,
+									"src": "169:35:0",
+									"stateVariable": true,
+									"storageLocation": "default",
+									"typeDescriptions": {
+										"typeIdentifier": "t_mapping$_t_address_$_t_struct$_Wallet_$6_storage_$",
+										"typeString": "mapping(address => struct EnoughBalance.Wallet)"
+									},
+									"typeName": {
+										"id": 10,
+										"keyName": "",
+										"keyNameLocation": "-1:-1:-1",
+										"keyType": {
+											"id": 7,
+											"name": "address",
+											"nodeType": "ElementaryTypeName",
+											"src": "178:7:0",
+											"typeDescriptions": {
+												"typeIdentifier": "t_address",
+												"typeString": "address"
+											}
+										},
+										"nodeType": "Mapping",
+										"src": "169:27:0",
+										"typeDescriptions": {
+											"typeIdentifier": "t_mapping$_t_address_$_t_struct$_Wallet_$6_storage_$",
+											"typeString": "mapping(address => struct EnoughBalance.Wallet)"
+										},
+										"valueName": "",
+										"valueNameLocation": "-1:-1:-1",
+										"valueType": {
+											"id": 9,
+											"nodeType": "UserDefinedTypeName",
+											"pathNode": {
+												"id": 8,
+												"name": "Wallet",
+												"nameLocations": [
+													"189:6:0"
+												],
+												"nodeType": "IdentifierPath",
+												"referencedDeclaration": 6,
+												"src": "189:6:0"
+											},
+											"referencedDeclaration": 6,
+											"src": "189:6:0",
+											"typeDescriptions": {
+												"typeIdentifier": "t_struct$_Wallet_$6_storage_ptr",
+												"typeString": "struct EnoughBalance.Wallet"
+											}
+										}
+									},
+									"visibility": "internal"
+								},
+								{
+									"body": {
+										"id": 27,
+										"nodeType": "Block",
+										"src": "249:115:0",
+										"statements": [
+											{
+												"expression": {
+													"arguments": [
+														{
+															"commonType": {
+																"typeIdentifier": "t_uint256",
+																"typeString": "uint256"
+															},
+															"id": 22,
+															"isConstant": false,
+															"isLValue": false,
+															"isPure": false,
+															"lValueRequested": false,
+															"leftExpression": {
+																"id": 16,
+																"name": "amount",
+																"nodeType": "Identifier",
+																"overloadedDeclarations": [],
+																"referencedDeclaration": 13,
+																"src": "268:6:0",
+																"typeDescriptions": {
+																	"typeIdentifier": "t_uint256",
+																	"typeString": "uint256"
+																}
+															},
+															"nodeType": "BinaryOperation",
+															"operator": "<=",
+															"rightExpression": {
+																"expression": {
+																	"baseExpression": {
+																		"id": 17,
+																		"name": "wallets",
+																		"nodeType": "Identifier",
+																		"overloadedDeclarations": [],
+																		"referencedDeclaration": 11,
+																		"src": "278:7:0",
+																		"typeDescriptions": {
+																			"typeIdentifier": "t_mapping$_t_address_$_t_struct$_Wallet_$6_storage_$",
+																			"typeString": "mapping(address => struct EnoughBalance.Wallet storage ref)"
+																		}
+																	},
+																	"id": 20,
+																	"indexExpression": {
+																		"expression": {
+																			"id": 18,
+																			"name": "msg",
+																			"nodeType": "Identifier",
+																			"overloadedDeclarations": [],
+																			"referencedDeclaration": 4294967281,
+																			"src": "286:3:0",
+																			"typeDescriptions": {
+																				"typeIdentifier": "t_magic_message",
+																				"typeString": "msg"
+																			}
+																		},
+																		"id": 19,
+																		"isConstant": false,
+																		"isLValue": false,
+																		"isPure": false,
+																		"lValueRequested": false,
+																		"memberLocation": "290:6:0",
+																		"memberName": "sender",
+																		"nodeType": "MemberAccess",
+																		"src": "286:10:0",
+																		"typeDescriptions": {
+																			"typeIdentifier": "t_address",
+																			"typeString": "address"
+																		}
+																	},
+																	"isConstant": false,
+																	"isLValue": true,
+																	"isPure": false,
+																	"lValueRequested": false,
+																	"nodeType": "IndexAccess",
+																	"src": "278:19:0",
+																	"typeDescriptions": {
+																		"typeIdentifier": "t_struct$_Wallet_$6_storage",
+																		"typeString": "struct EnoughBalance.Wallet storage ref"
+																	}
+																},
+																"id": 21,
+																"isConstant": false,
+																"isLValue": true,
+																"isPure": false,
+																"lValueRequested": false,
+																"memberLocation": "298:7:0",
+																"memberName": "balance",
+																"nodeType": "MemberAccess",
+																"referencedDeclaration": 5,
+																"src": "278:27:0",
+																"typeDescriptions": {
+																	"typeIdentifier": "t_uint256",
+																	"typeString": "uint256"
+																}
+															},
+															"src": "268:37:0",
+															"typeDescriptions": {
+																"typeIdentifier": "t_bool",
+																"typeString": "bool"
+															}
+														},
+														{
+															"hexValue": "596f752063616e2774207370656e64206d6f7265207468616e20796f752068617665",
+															"id": 23,
+															"isConstant": false,
+															"isLValue": false,
+															"isPure": true,
+															"kind": "string",
+															"lValueRequested": false,
+															"nodeType": "Literal",
+															"src": "307:36:0",
+															"typeDescriptions": {
+																"typeIdentifier": "t_stringliteral_d1815cb09a0097f0aecad61160d7dd2c8c07471284f8340200bc8ead4742259a",
+																"typeString": "literal_string \"You can't spend more than you have\""
+															},
+															"value": "You can't spend more than you have"
+														}
+													],
+													"expression": {
+														"argumentTypes": [
+															{
+																"typeIdentifier": "t_bool",
+																"typeString": "bool"
+															},
+															{
+																"typeIdentifier": "t_stringliteral_d1815cb09a0097f0aecad61160d7dd2c8c07471284f8340200bc8ead4742259a",
+																"typeString": "literal_string \"You can't spend more than you have\""
+															}
+														],
+														"id": 15,
+														"name": "require",
+														"nodeType": "Identifier",
+														"overloadedDeclarations": [
+															4294967278,
+															4294967278
+														],
+														"referencedDeclaration": 4294967278,
+														"src": "260:7:0",
+														"typeDescriptions": {
+															"typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+															"typeString": "function (bool,string memory) pure"
+														}
+													},
+													"id": 24,
+													"isConstant": false,
+													"isLValue": false,
+													"isPure": false,
+													"kind": "functionCall",
+													"lValueRequested": false,
+													"nameLocations": [],
+													"names": [],
+													"nodeType": "FunctionCall",
+													"src": "260:84:0",
+													"tryCall": false,
+													"typeDescriptions": {
+														"typeIdentifier": "t_tuple$__$",
+														"typeString": "tuple()"
+													}
+												},
+												"id": 25,
+												"nodeType": "ExpressionStatement",
+												"src": "260:84:0"
+											},
+											{
+												"id": 26,
+												"nodeType": "PlaceholderStatement",
+												"src": "355:1:0"
+											}
+										]
+									},
+									"id": 28,
+									"name": "enoughBalance",
+									"nameLocation": "222:13:0",
+									"nodeType": "ModifierDefinition",
+									"parameters": {
+										"id": 14,
+										"nodeType": "ParameterList",
+										"parameters": [
+											{
+												"constant": false,
+												"id": 13,
+												"mutability": "mutable",
+												"name": "amount",
+												"nameLocation": "241:6:0",
+												"nodeType": "VariableDeclaration",
+												"scope": 28,
+												"src": "236:11:0",
+												"stateVariable": false,
+												"storageLocation": "default",
+												"typeDescriptions": {
+													"typeIdentifier": "t_uint256",
+													"typeString": "uint256"
+												},
+												"typeName": {
+													"id": 12,
+													"name": "uint",
+													"nodeType": "ElementaryTypeName",
+													"src": "236:4:0",
+													"typeDescriptions": {
+														"typeIdentifier": "t_uint256",
+														"typeString": "uint256"
+													}
+												},
+												"visibility": "internal"
+											}
+										],
+										"src": "235:13:0"
+									},
+									"src": "213:151:0",
+									"virtual": false,
+									"visibility": "internal"
+								}
+							],
+							"scope": 30,
+							"src": "60:307:0",
+							"usedErrors": []
+						}
+					],
+					"src": "33:334:0"
+				},
+				"id": 0
+			}
+		}
+	}
+}

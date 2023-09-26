@@ -1,0 +1,64 @@
+{
+	"compiler": {
+		"version": "0.8.18+commit.87f61d96"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "senderBalance",
+						"type": "uint256"
+					}
+				],
+				"name": "amountController",
+				"outputs": [],
+				"stateMutability": "pure",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/Smart_Wallet_Final/Balance_And_Amount.sol": "BalanceAndAmount"
+		},
+		"evmVersion": "paris",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/Smart_Wallet_Final/Balance_And_Amount.sol": {
+			"keccak256": "0x6c61358afa9f2aaa6bbcbf17b8b4133a099b895148e687a9a06ef1c3686b5a5d",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://ee5006cf4f722ad4de69727468aac936542ea8e69bba049049fbf251f3efaa9c",
+				"dweb:/ipfs/QmPRb6B8hrHyyf8BWF3CUaBrgdTNtxzf5E5ZaFcRhzTUjN"
+			]
+		}
+	},
+	"version": 1
+}
